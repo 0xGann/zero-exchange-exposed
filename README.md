@@ -1,5 +1,5 @@
 ## TLDR:
-Zero Exchange source code is a fork of UniSwap with the ability to steal users' funds added. They have over 20 million USD of users funds in their contracts and the anonymous team can steal every dollar at any moment by minting ZERO token or wrapped Zero assets. All funds should be withdrawn immediately.
+Zero Exchange source code is a fork of UniSwap with the ability to steal users' funds added. They have over 20 million USD of users funds in their contracts and the anonymous team can steal every dollar at any moment by minting ZERO token or wrapped Zero assets to sell against their pools. All funds should be withdrawn immediately.
 
 ## ANALYSIS:
 While doing some research on the Avalanche blockchain I became aware of an exchange called Zero Exchange, which was operating using a series of unverified smart contracts.
@@ -18,7 +18,7 @@ All of the pools holding everyone’s funds remained unverified, but it’s view
 
 However, my suspicions had been raised by the reaction of the team to asking for verified smart contracts, so I began to investigate further.
 
-At the time of writing this report Zero Exchange is operating 6 pools on Avalanche blockchain, and each pool is paired against either ZERO token, or a wrapped zAsset. The addresses are:
+At the time of writing this report Zero Exchange is operating 6 pools on Avalanche blockchain, and each pool is paired against either ZERO token, or a wrapped z-Asset. The addresses are:
 ```
 0x332719570155dc61bEc2901A06d6B36faF02F184
 0x4cEa032b4B3F59f31d6d52071258EE0d42b6cC7e
@@ -61,11 +61,11 @@ modifier onlyMinter {
 }
 ```
 
-Calling the contract minter variable reveals an address `0xf26eae2a9e571e60a166e4fa91f92e63984eeb2b`, which has the ability to create as many ZERO tokens as they want
+Calling the contract minter variable reveals an address `0xf26eae2a9e571e60a166e4fa91f92e63984eeb2b`, which has the ability to create as many ZERO tokens as the team wants.
 
 Clearly, this is the same code as the ZERO token on Avalanche, and of course the reason they were refusing to verify it.
 
-Checking the code for all of the wrapped assets shows they all have the same functionality, for example:
+Checking the code for all of the wrapped assets shows they all have the same "team can mint" functionality, for example:
 
 https://cchain.explorer.avax.network/address/0xf6F3EEa905ac1da6F6DD37d06810C6Fcb0EF5183/contracts
 ```
@@ -75,7 +75,7 @@ function mint(address to, uint256 amount) public {
 }
 ```
 
-The code for the ZERO token and these mintable assets is not published on their Github like their router and peripheral contracts. It's clear that the team wish to keep this functionality of their code hidden.
+The code for the ZERO token and these mintable assets is not published on their Github like their router and peripheral contracts. It's clear that the team wish to keep this functionality of their code hidden, otherwise they would have published the code on their Github, or at least verified it when requested.
 
 The code they have published is nothing other than the Uniswap code with the names of variables changed - zero innovation or new features added. You can view a comparison here:  
 https://github.com/Uniswap/uniswap-v2-core/compare/master...zeroexchange:master
