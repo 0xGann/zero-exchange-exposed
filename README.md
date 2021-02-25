@@ -80,10 +80,10 @@ The code for the ZERO token and these mintable assets is not published on their 
 The code they have published is nothing other than the Uniswap code with the names of variables changed - zero innovation or new features added. You can view a comparison here:  
 https://github.com/Uniswap/uniswap-v2-core/compare/master...zeroexchange:master
 
-The sum of total assets in Zero Exchange related tools is currently over 20 million USD at time of writing. The code itself proves that at any second, the Zero Exchange team can activate the minting methods on all the assets they control to drain these pools.
+The sum of total assets in Zero Exchange related pools is currently over 20 million USD at time of writing. The code itself proves that at any second, the Zero Exchange team can activate the minting methods on all the assets they control to drain these pools.
 
 Apart from the minting methods the Zero Exchange code is just a fork of Uniswap with the names of variables changed. They have taken Uniswap code, rebranded a simple website, and secretly added the ability for themselves to drain all funds, and are now managing over 20 million USD of people’s funds.
 
 The team behind Zero Exchange is 100% anonymous, having taken significant steps to hide their identities. Despite their ability to take everyone’s funds at any money, their website brands their service as “Zero Custody”.
 
-I am writing this on the 25th of February 2021 as an alert for the community and all users of Zero Exchange. I hope it gets out in time. The source code of this protocol is intentionally designed to give the anonymous owners the ability to take the funds of users.
+I am writing this on the 25th of February 2021 as an alert for the community and all users of Zero Exchange. I hope it gets out in time. The source code of this protocol is intentionally designed to give the anonymous owners the ability to take the funds of users. I cannot emphasis the seriousness of this enough - if you have funds on a Zero Exchange contract right now you are at risk!
